@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+    scrollbar-color: transparent;
+    text-align: center;
+    text-decoration: none;
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+body{
+    position: relative;
+    /* background-color: rgb(210, 100, 100); */
+    background-image: radial-gradient(rgb(251, 207, 207), rgb(112, 73, 73));
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* padding-bottom: 100px; */
+}
+section{
+    width: 100%;
+    height: 100%;
+    flex: 1;
+}
+/*--------------- Formularios Login y crear nuevo usuario----------------*/
+form{
+    background-color: white;
+    min-width: 40%;
+    width: auto;
+    text-align: center;
+    margin: 50px;
+    padding: 5px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px -5px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/*--- Enlace al formulario de Nuevo usuario*/ 
+#enlace{
+    font-size: 20px;
+}
+#enlace a{
+    color: rgb(56, 50, 122);
+    text-decoration: underline;
+    font-size: 20px;
+}
+#enlace a:hover{
+    color: red;
+}
+/*--- Elementos de los formularios ---*/
+button{
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    padding: 5px;
+    border: solid 1px grey;
+}
+label{
+    background-color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+input{
+    background-color: rgb(189, 186, 186);
+    border-radius: 5px;
+}
+form p, form select, form h3{
+    background-color: white;
+}
+form button:hover{
+    background-color: yellowgreen;
+}
+.cancel-button:hover{
+    background-color: red;
+}
+#index{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+/*--- Pagina inicio y tabla de asignaturas ---*/
+#index h2{
+    font-size: 70px;
+    color: black;
+}
+#index table{
+    background-color: rgb(255, 255, 255);
+    align-self: center;
+    align-content: center;
+    border-radius: 5px;
+    border: solid 1px black;
+    padding: 10px;
+}
+#index table a{
+    color: rgb(3, 182, 232);
+    font-size: 20px;
+}
+#index table a:hover{
+    color: yellow;
+}
+/*--- Distribucion contenedores ---*/
+#principal{
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    flex: 1;
+}
+.container-center{
+    text-align: left;
+    width: 50%;
+    /* height: 100%; */
+    margin-bottom: 100px;
+    background-color: rgb(255, 249, 237);
+    border: solid 2px rgb(112, 73, 73);
+}
+.container{
+    text-align: left;
+    width: 25%;
+    min-height: 100%;
+    margin-bottom: 100px;
+    background-color: rgb(252, 242, 224);
+    border: solid 2px rgb(112, 73, 73);
+}
+.container h2, .container-center h2{
+    text-align: left;
+}

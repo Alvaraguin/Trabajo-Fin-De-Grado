@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    text-align: center;
+}
+header{
+    width: 100%; 
+    /* background-color: blue; */
+    background-image: radial-gradient(rgb(0, 115, 255), rgb(33, 1, 97));
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header h1{
+    color: bisque;    
+}
+nav{
+    width: 100%;
+    display: flex;
+    background-color: rgb(73, 228, 228);
+    height: 50px;
+    align-items: center;
+    justify-content: end;
+    border-top: solid 2px rgb(0, 0, 0);
+}
+nav a{
+    border-radius: 10px;
+    background-color: white;
+    color: brown;
+    padding: 6px;
+    margin: 5px;
+    cursor: pointer;
+}
+nav a:hover{
+    background-color: yellowgreen;
+    cursor: pointer;
+}
+nav button{
+    border-radius: 10px;
+    background-color: white;
+    color: brown;
+    padding: 6px;
+    margin: 5px;
+    border: none;
+}
+nav  button:hover{
+    background-color: yellowgreen;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: black;
+    display:  flex;
+    flex-direction: column;
+}
+.up{
+    width: 100%;
+    height: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+}
+.down{
+    width: 100%;
+    height: 20%;
+}
+.up-container{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.up a{
+    width: 90%;
+    height: 90%;
+}
+.up img{
+    width: 90%;
+    height: 90%;
+}
+.down p{
+    color: white;
+}
+
+.pop-up {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 101;
+}
+.pop-up h1{
+    text-align: center;
+    font-size: 80;
+}
+.pop-up p{
+    font-size: 40;
+}
+.pop-up #confirm:hover{
+    background-color: yellowgreen;
+}
+
+.fondo-oscuro {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100; /* Asegura que esté por encima del contenido */
+    display: none; /* Por defecto oculto */
+}
