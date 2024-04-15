@@ -18,13 +18,10 @@ body{
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding-bottom: 100px;
 }
 section{
     width: 100%;
     height: 100%;
-    flex: 1;
-    margin-bottom: 100px;
 }
 /*--------------- Formularios Login y crear nuevo usuario----------------*/
 form{
@@ -47,7 +44,6 @@ form{
     align-items: center;
     justify-content: center;
     margin-bottom: 100px;
-    flex: 1;
 }
 /*--- Enlace al formulario de Nuevo usuario*/ 
 #enlace{

@@ -1,10 +1,23 @@
 .deletezone{
-    border: 1px solid black;
-    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.deletezone p{
+    margin-right: 2px;
+    order: 3;
+}
+.deletezone::before{
+    content: '';
+    order: 2;
+    flex: 1;
+    border-bottom: 1px solid black; /* Estilo de la línea */
+    margin-right: 10px; /* Espacio entre la línea y el botón */
+}
+.deletezone a{
+    margin-left: 2px;
     margin-right: 5px;
-    margin-bottom: 5px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    order: 1;
 }
 .deletezone button{
     background-color: blue;
@@ -19,7 +32,7 @@
     justify-content: center;
 }
 
-/* --------------- Zona de creacion/elliminacion de asignaturas ----------------*/
+/* --------------- Zona de creacion/eliminacion de asignaturas ----------------*/
 .acceptButton:hover{
     background-color: yellowgreen;
 }

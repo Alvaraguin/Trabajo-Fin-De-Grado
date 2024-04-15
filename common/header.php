@@ -19,10 +19,18 @@
     <nav>
         <?php
         if(isset($_SESSION['login'])){
+            if($_SESSION['rol']!=='Administrador'){
         ?>
         <a href="./index.php">Cursos</a> |
         <a href="./modifyForm.php">Modificar perfil</a> |
+        <?php
+                if($_SESSION['rol']==='Estudiante'){
+        ?>
         <a href="">Matricularse</a> |
+        <?php
+                }
+            }
+        ?>
         <a href="#" onclick="showHide('eliminacionUser')">Eliminar perfil</a> |
         <?php
             echo"Hola, {$_SESSION['username']}";

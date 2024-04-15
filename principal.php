@@ -35,9 +35,10 @@
             while($perfil=mysqli_fetch_assoc($result)){
             ?>
             <div class="deletezone">
+                <a href="./validarForms/validarEliminaciones/eliminarPerfil.php?valor=<?php echo "{$perfil['userMail']}" ?>"><button type="button">Eliminar</button></a>
                 <p>Perfil a eliminar: <?php echo"{$perfil['userMail']}"; ?></p><br>
-                <a href=""><button type="button">Eliminar</button></a>
-            </div>
+                
+            </div><br>
             <?php
             }
             }
@@ -83,7 +84,7 @@
         ?>
             <h1>Cursos existentes</h1><br>
             <div class="addButton"><button type="button" class="acceptButton" onclick="showHide('anadirAsignatura')">Añadir curso</button></div><br>
-            <ul>
+            
         <?php
             $sql="SELECT name, id FROM subject";
             $result=mysqli_query($conexion, $sql);
