@@ -1,5 +1,5 @@
 .deletezone{
-    border: 2px solid black;
+    border: 1px solid black;
     margin-left: 5px;
     margin-right: 5px;
     margin-bottom: 5px;
@@ -18,6 +18,37 @@
     align-items: center;
     justify-content: center;
 }
+
+/* --------------- Zona de creacion/elliminacion de asignaturas ----------------*/
 .acceptButton:hover{
     background-color: yellowgreen;
+}
+.deleteSubject{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+}
+.deleteSubject p{
+    margin-left: 2px;
+    margin-right: 5px;
+    order: 1;
+}
+.deleteSubject::before{
+    content: '';
+    order: 2;
+    flex: 1;
+    border-bottom: 1px solid black; /* Estilo de la línea */
+    margin-right: 10px; /* Espacio entre la línea y el botón */
+}
+.deleteSubject a{
+    margin-right: 2px;
+    order: 3;
+}
+.deleteSubject button{
+    background-color: blue;
+    color: white;
+}
+.deleteSubject button:hover{
+    background-color: greenyellow;
 }

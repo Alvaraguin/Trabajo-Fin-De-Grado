@@ -61,6 +61,8 @@
             if($_SESSION["rol"]=== "Administrador"){
             ?>
             <h1>Matriculación</h1>
+            <p>&#x2605; Esta es una estrella sólida.</p>
+            <p>&#x2606; Esta es una estrella vacía.</p>
             <?php
             }
             else{
@@ -71,17 +73,31 @@
             ?>
             
         </div>
+
+
+
 <!-- Contenedor de la derecha -->
         <div class="container">
         <?php
             if($_SESSION["rol"]=== "Administrador"){
         ?>
             <h1>Cursos existentes</h1><br>
-            <div class="addButton"><button type="button" class="acceptButton" onclick="showHide('anadirAsignatura')">Añadir curso</button></div>
-            
+            <div class="addButton"><button type="button" class="acceptButton" onclick="showHide('anadirAsignatura')">Añadir curso</button></div><br>
+            <ul>
         <?php
-            }
-            else{
+            $sql="SELECT name, id FROM subject";
+            $result=mysqli_query($conexion, $sql);
+            while($curso=mysqli_fetch_assoc($result)){
+        ?>
+                
+            <div class="deleteSubject">
+                <p>·<?php echo"{$curso['id']}"; ?>: <?php echo"{$curso['name']}"; ?></p>
+                <a href="./validarForms/validarEliminaciones/eliminarAsignatura.php?valor=<?php echo "{$curso['name']}" ?>"><button type="button">Eliminar</button></a>
+            </div><br>
+        <?php
+                }
+        }
+        else{
         ?>
             <h1>Favoritos</h1><br>
         <?php
@@ -94,6 +110,9 @@
     <?php
         require("./common/footer.php");
     ?>
+
+
+
 <!-- Pop ups -->
     <div class="fondo-oscuro" id="fondoOscuro"></div>
     <div class="pop-up" id="anadirAsignatura">
