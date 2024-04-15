@@ -13,3 +13,11 @@
 .deletezone button:hover{
     background-color: greenyellow;
 }
+.addButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.acceptButton:hover{
+    background-color: yellowgreen;
+}
