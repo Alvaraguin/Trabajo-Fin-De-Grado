@@ -6,38 +6,48 @@ $dni=htmlspecialchars(trim(strip_tags($_POST["dni"])));
 $password=htmlspecialchars(trim(strip_tags($_POST["pass"])));
 $password2=htmlspecialchars(trim(strip_tags($_POST["pass2"])));
 
+if($name==="" && $dni==="" && $password===""){
+    header("location: ../index.php");
+}
+
 if($name!==""){
     $_SESSION["username"] = $name;
 
     $sql = "UPDATE usuarios SET nombre='$name' WHERE email='{$_SESSION['mail']}'";
     $result = mysqli_query($conexion, $sql);
-    if($dni==="" && $password=""){
+    if($dni==="" && $password===""){
         header("location: ../index.php");
     }
 }
 
-if($dni!== "" && validarDni($dni, $conexion)) {
-    $sql = "UPDATE usuarios SET dni='$dni' WHERE email='{$_SESSION['mail']}'";
-    $result = mysqli_query($conexion, $sql);
-    if($password=""){
-        header("location: ../index.php");
+if($dni!== "") {
+    if(validarDni($dni, $conexion)){
+        $sql = "UPDATE usuarios SET dni='$dni' WHERE email='{$_SESSION['mail']}'";
+        $result = mysqli_query($conexion, $sql);
+        if($password===""){
+            header("location: ../index.php");
+        }
+    }
+    else{
+        header("location: ../modifyForm.php");
     }
 }
-else{
-    header("location: ../modifyForm.php");
-}
 
-if($password!=="" && validarClave($password, $password2)){
+
+if($password!==""){
+    if(validarClave($password, $password2)){
     
-    $hash=password_hash($password, PASSWORD_DEFAULT);
+        $hash=password_hash($password, PASSWORD_DEFAULT);
 
-    $sql = "UPDATE usuarios SET password='$hash' WHERE email='{$_SESSION['mail']}'";
-    $result = mysqli_query($conexion, $sql);
-    header("location: ../index.php");
+        $sql = "UPDATE usuarios SET password='$hash' WHERE email='{$_SESSION['mail']}'";
+        $result = mysqli_query($conexion, $sql);
+        header("location: ../index.php");
+    }
+    else{
+        header("location: ../modifyForm.php");
+    }
 }
-else{
-    header("location: ../modifyForm.php");
-}
+
 
 function validarClave($valor, $valor2){
     if($valor!=$valor2){
@@ -56,10 +66,10 @@ function validarDni($dni, $conexion){
 
     if($array["num"]>0){
         $_SESSION["dniUsado"] = true;
-        return true;
+        return false;
     }
     else{
         $_SESSION['dniUsado'] = false;
-        return false;
+        return true;
     }
 }
