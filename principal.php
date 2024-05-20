@@ -70,6 +70,19 @@
             ?>
             <h1><?php  echo"{$_SESSION['subject']}"; ?></h1><br>
             <?php
+                if($_SESSION['rol'] === 'Profesor'){
+
+            ?>
+            <div class='addButton'>
+                <button type="button" class="acceptButton" onclick="showHide('anadirActividad')">Agregar actividad</button>
+            </div><br><br>
+            <?php
+                }
+                $sql="SELECT * FROM actividades WHERE asignatura='{$_SESSION['subject']}'";
+                $consulta=mysqli_query($conexion, $sql);
+                while($actividad=mysqli_fetch_assoc($consulta)){
+                    echo "<a href='./mostrarActividad.php?valor={$actividad['nombre']}'>{$actividad['nombre']}</a><br>";
+                }
             }
             ?>
             
@@ -146,6 +159,38 @@
             <div class="buttons">
                 <button type="button" onclick="showHide('anadirAsignatura')" class="cancel-button">Cancelar</button>
                 <button type="submit">Crear curso</button>
+            </div>
+            <br>
+        </form>
+    </div>
+
+    <div class="pop-up" id="anadirActividad">
+        <h1>Añadir actividad</h1>
+        <form action="./validarForms/validarIncorporaciones/anadirActividad.php" method="post" enctype="multipart/form-data">
+
+            <label for="name">Nombre</label><br>
+            <input type="text" id="name" name="name" placeholder="Escribe el nombre de la actividad" required /><br>
+
+            <label>Elige tipo de actividad:</label>
+            <select name="type" required>
+                <option value="" disabled selected>--Elige una opcion</option>
+                <option value="Examen">Examen</option>
+                <option value="Practica">Practica</option>
+                <option value="Ejercicios">Ejercicios</option>
+                <option value="Apuntes">Apuntes</option>
+                <option value="Imagen">Imagen</option>
+            </select>
+            <br><br>
+
+            <label for="archivo">Elige el archivo a subir:</label>
+            <input type="file" id='archivo' name='archivo'><br>
+
+            <label for="fecha">Introduce la fecha límite:</label>
+            <input type="datetime-local" id='fecha' name='fecha'><br>
+
+            <div class="buttons">
+                <button type="button" onclick="showHide('anadirActividad')" class="cancel-button">Cancelar</button>
+                <button type="submit">Crear actividad</button>
             </div>
             <br>
         </form>

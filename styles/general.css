@@ -66,6 +66,9 @@ button{
     padding: 5px;
     border: solid 1px grey;
 }
+button:hover{
+    background-color: yellowgreen;
+}
 label{
     background-color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -132,4 +135,14 @@ form button:hover{
 }
 .container h2, .container-center h2{
     text-align: left;
+}
+.archivo{
+    width: 80%;
+    height: 80%;
+    margin: 5px;
+    margin-top: 10px;
+    min-height: 800px;
+}
+.buttons{
+    margin-bottom: 5px;
 }
