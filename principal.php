@@ -73,7 +73,8 @@
                 if($_SESSION['rol'] === 'Profesor'){
 
             ?>
-            <div class='addButton'>
+            <div class='buttons'>
+                <button type="button" class="cancel-button" onclick="">Eliminar actividad</button>
                 <button type="button" class="acceptButton" onclick="showHide('anadirActividad')">Agregar actividad</button>
             </div><br><br>
             <?php
@@ -81,7 +82,7 @@
                 $sql="SELECT * FROM actividades WHERE asignatura='{$_SESSION['subject']}'";
                 $consulta=mysqli_query($conexion, $sql);
                 while($actividad=mysqli_fetch_assoc($consulta)){
-                    echo "<a href='./mostrarActividad.php?valor={$actividad['nombre']}'>{$actividad['nombre']}</a><br>";
+                    echo "<a class=\"enlaceActividad\" href='./mostrarActividad.php?valor={$actividad['nombre']}'>{$actividad['nombre']}</a><br>";
                 }
             }
             ?>
@@ -174,19 +175,16 @@
             <label>Elige tipo de actividad:</label>
             <select name="type" required>
                 <option value="" disabled selected>--Elige una opcion</option>
-                <option value="Examen">Examen</option>
-                <option value="Practica">Practica</option>
-                <option value="Ejercicios">Ejercicios</option>
-                <option value="Apuntes">Apuntes</option>
-                <option value="Imagen">Imagen</option>
+                <option value="Teoria">Teoría</option>
+                <option value="Practica">Práctica</option>
             </select>
             <br><br>
 
             <label for="archivo">Elige el archivo a subir:</label>
             <input type="file" id='archivo' name='archivo'><br>
 
-            <label for="fecha">Introduce la fecha límite:</label>
-            <input type="datetime-local" id='fecha' name='fecha'><br>
+            <!-- <label for="fecha">Introduce la fecha límite:</label>
+            <input type="datetime-local" id='fecha' name='fecha'><br> -->
 
             <div class="buttons">
                 <button type="button" onclick="showHide('anadirActividad')" class="cancel-button">Cancelar</button>

@@ -86,6 +86,9 @@ form button:hover{
 .cancel-button:hover{
     background-color: red;
 }
+.modify_button:hover{
+    background-color: blue;
+}
 #index{
     display: flex;
     flex-direction: column;
@@ -145,4 +148,15 @@ form button:hover{
 }
 .buttons{
     margin-bottom: 5px;
+}
+.enlaceActividad{
+    display: inline-block;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: black;
+}
+.enlaceActividad:hover{
+    color: rgb(56, 197, 129);
 }

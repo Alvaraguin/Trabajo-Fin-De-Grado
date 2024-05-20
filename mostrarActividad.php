@@ -55,6 +55,16 @@
         <div class="buttons">
             <button type="button" onclick="cancel()" class="cancel-button">Volver</button>
             <button type="button" class="accept-button">Descargar</button>
+            <?php
+            if($_SESSION['rol']==='Profesor'){
+                echo "<button type=\"button\" onclick=\"\" class=\"modify_button\">Modificar actividad</button>";
+            }
+            else{
+                if($actividad['tipo'] === 'Practica'){
+                    echo "<button type=\"button\" onclick=\"\" class=\"modify_button\">Agregar entrega</button>";
+                }
+            }
+            ?>
         </div>
         
     </section>
