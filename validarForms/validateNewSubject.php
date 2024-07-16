@@ -1,22 +1,21 @@
 <?php
 require("../session.php");
 
-$cod=htmlspecialchars(trim(strip_tags($_POST["codigo"])));
 $name=htmlspecialchars(trim(strip_tags($_POST["name"])));
-$profesor=htmlspecialchars(trim(strip_tags($_POST["profesor"])));
+$profesor=$_SESSION['mail'];
 
-if(!cursoExistente($cod, $name, $conexion)){
+if(!cursoExistente($name, $conexion)){
 
-    $sql = "INSERT INTO subject(name, teacher, id) VALUES('$name', '$profesor', '$cod')";
+    $sql = "INSERT INTO grupos(IdGrupo, profesor) VALUES('$name', '$profesor')";
     $result = mysqli_query($conexion, $sql);
-    header("location: ../principal.php");
+    header("location: ../index.php");
 }
 else{
-    header("location: ../principal.php?popup=show");
+    header("location: ../index.php?popup=show");
 }
 
-function cursoExistente($valor, $valor2, $conexion){
-    $sql= "SELECT COUNT(*) AS num FROM subject WHERE id='$valor' OR name='$valor2' ";
+function cursoExistente($valor, $conexion){
+    $sql= "SELECT COUNT(*) AS num FROM grupos WHERE IdGrupo='$valor' ";
     $result = mysqli_query($conexion, $sql);
     $array=mysqli_fetch_array($result);
 

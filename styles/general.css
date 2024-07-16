@@ -115,6 +115,9 @@ form button:hover{
 #index table a:hover{
     color: yellow;
 }
+#index table th,td{
+    min-width: 20px;
+}
 /*--- Distribucion contenedores ---*/
 #principal{
     display: flex;
@@ -159,4 +162,8 @@ form button:hover{
 }
 .enlaceActividad:hover{
     color: rgb(56, 197, 129);
+}
+.estudiante{
+    text-align: left;
+    margin: 10px;
 }

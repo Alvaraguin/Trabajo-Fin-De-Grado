@@ -43,15 +43,20 @@
             }
             }
             else{
+                echo"<h1>Participantes</h1><br>";
+                if($_SESSION['rol']==="Profesor"){
             ?>
-    
-            <h1>Participantes</h1><br>
-            <h2>Mejores amigos</h2>
-            <h2>Estudiantes</h2>
-            <h2>Profesores</h2>
-
-
+            <div class='buttons'>
+                <button type="button" class="cancel-button" onclick="">Eliminar alumno</button>
+                <button type="button" class="acceptButton" onclick="">Agregar alumno</button>
+            </div>
+            <div class="deletezone">
+                <a href=""><button type="button">Eliminar</button></a>
+                <p>Perfil a eliminar: ; ?></p><br>
+                
+            </div><br>
             <?php
+                }
             }
             ?>
         </div>
@@ -68,7 +73,7 @@
             }
             else{
             ?>
-            <h1><?php  echo"{$_SESSION['subject']}"; ?></h1><br>
+            <h1>Grupo <?php  echo"{$_SESSION['subject']}"; ?></h1><br>
             <?php
                 if($_SESSION['rol'] === 'Profesor'){
 
@@ -85,6 +90,7 @@
                     echo "<a class=\"enlaceActividad\" href='./mostrarActividad.php?valor={$actividad['nombre']}'>{$actividad['nombre']}</a><br>";
                 }
             }
+        
             ?>
             
         </div>

@@ -2,22 +2,19 @@
 
 require("../../session.php");
 
-$subject = htmlspecialchars(trim(strip_tags($_GET['valor'])));
-$sql = "SELECT id FROM subject WHERE name='$subject'";
-$result=mysqli_query($conexion, $sql);
-$cod=mysqli_fetch_assoc($result);
+$grupo = htmlspecialchars(trim(strip_tags($_POST['type'])));
 
 /*Eliminar de la tabla de asignaturas*/
-$sql = "DELETE FROM subject WHERE name='$subject'";
+$sql = "DELETE FROM grupos WHERE IdGrupo='$grupo'";
 $result = mysqli_query($conexion, $sql);
 
 /*Eliminar de la tabla de matriculas*/
-$sql = "DELETE FROM matriculas WHERE subjectCod='$cod'";
+$sql = "DELETE FROM matriculas WHERE subjectCod='$grupo'";
 $result = mysqli_query($conexion, $sql);
 
 /*Eliminar de la tabla de notificaciones de matriculacion*/
-$sql = "DELETE FROM matnot WHERE curso='$cod'";
+$sql = "DELETE FROM matnot WHERE curso='$grupo'";
 $result = mysqli_query($conexion, $sql);
 
 
-header("location: ../../principal.php");
+header("location: ../../index.php");
