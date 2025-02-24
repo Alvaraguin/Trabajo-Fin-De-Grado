@@ -17,6 +17,15 @@
         <a href="./validarForms/validateDelete.php"><button type="button" id="confirm">Confirmar</button></a>
     </div>
     <nav>
+        <ul class="menu-horizontal">
+            <li>
+                <a href="">Perfil</a>
+                <ul class="menu-vertical">
+                    <li><a href="">Modificar perfil</a></li>
+                    <li><a href="">Eliminar</a></li>
+                </ul>
+            </li>
+        </ul>
         <?php
         if(isset($_SESSION['login'])){
             if($_SESSION['rol']!=='Administrador'){

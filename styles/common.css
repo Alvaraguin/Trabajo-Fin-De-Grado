@@ -20,32 +20,50 @@ nav{
     background-color: rgb(73, 228, 228);
     height: 50px;
     align-items: center;
-    justify-content: end;
+    justify-content: left;
     border-top: solid 2px rgb(0, 0, 0);
 }
-nav a{
-    border-radius: 10px;
-    background-color: white;
-    color: brown;
-    padding: 6px;
-    margin: 5px;
-    cursor: pointer;
+
+.menu-horizontal{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
 }
-nav a:hover{
-    background-color: yellowgreen;
-    cursor: pointer;
+
+.menu-horizontal > li > a{
+    display: block;
+    padding: 15px 20px;
+    color: white;
+    text-decoration: none;
+    background-color: rgb(73, 228, 228);
 }
-nav button{
-    border-radius: 10px;
-    background-color: white;
-    color: brown;
-    padding: 6px;
-    margin: 5px;
-    border: none;
+.menu-horizontal > li:hover{
+    background-color: rgb(255, 0, 0);
 }
-nav  button:hover{
-    background-color: yellowgreen;
+
+.menu-vertical{
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
+
+.menu-horizontal li:hover .menu-vertical{
+    display: block;
+}
+
+.menu-vertical li:hover{
+    background-color: black;
+}
+
+.menu-vertical li a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 15px 15px 20px;
+}
+
 footer{
     position: fixed;
     bottom: 0;
